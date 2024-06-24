@@ -119,6 +119,18 @@ class _ExampleSubWindow extends StatelessWidget {
               },
               child: const Text('Close this window'),
             ),
+            TextButton(
+              onPressed: () async {
+                windowController.setFullscreen(true);
+              },
+              child: const Text('进入全屏'),
+            ),
+            TextButton(
+              onPressed: () async {
+                windowController.setFullscreen(false);
+              },
+              child: const Text('退出全屏'),
+            ),
             Expanded(child: EventWidget(controller: windowController)),
           ],
         ),

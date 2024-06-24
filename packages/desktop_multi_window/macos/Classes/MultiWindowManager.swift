@@ -113,6 +113,14 @@ class MultiWindowManager {
   func getAllSubWindowIds() -> [Int64] {
     return windows.keys.filter { $0 != 0 }
   }
+    
+  func setFullscreen(windowId: Int64, fullscreen: Bool) {
+    guard let window = windows[windowId] else {
+        debugPrint("window \(windowId) not exists.")
+        return
+    }
+    window.setFullscreen(fullscreen: fullscreen)
+  }
 }
 
 protocol WindowManagerDelegate: AnyObject {

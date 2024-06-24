@@ -54,6 +54,17 @@ class BaseFlutterWindow: NSObject {
   func setFrameAutosaveName(name: String) {
     window.setFrameAutosaveName(name)
   }
+  func setFullscreen(fullscreen: Bool) {
+    if (fullscreen) {
+        if (!window.styleMask.contains(.fullScreen)) {
+            window.toggleFullScreen(nil)
+        }
+    } else {
+        if (window.styleMask.contains(.fullScreen)) {
+            window.toggleFullScreen(nil)
+        }
+        }
+  }
 }
 
 class FlutterWindow: BaseFlutterWindow {

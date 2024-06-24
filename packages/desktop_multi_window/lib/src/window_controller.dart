@@ -45,4 +45,7 @@ abstract class WindowController {
 
   /// Available only on macOS.
   Future<void> setFrameAutosaveName(String name);
+
+  /// Make the window full screen or not
+  Future<void> setFullscreen(bool fullscreen);
 }
